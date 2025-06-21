@@ -11,36 +11,24 @@ class Solution:
             i=digit*power
             comp=digit-5
 
-
             if i in roman:
-                print('1')
                 result+=roman[i]
+
             elif digit>0 and i+power in roman:
-                print('2')
                 result+=roman[power]
                 result+=roman[i+power]
-                
             
             elif digit>5:
-                print('3')
-                print(f'i:{i}-(5*power){5*power}')
-                
-
-                print(f'comp={comp}')
                 result+=roman[5*power]
                 result+=(roman[1*power]*comp)
             
             elif digit<4:
-                print('4')
                 result+=roman[power]*digit
 
-            print(f'i={i}, digit={digit}, result={result}')
             power//=10
             
 
         return result
-
-print(Solution.intToRoman(0, 1111))
         
 
             
